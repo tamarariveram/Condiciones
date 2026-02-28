@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    img {
+      width: 500px;
+      height: auto;
+    }
+  </style>
+  <body>
+    <img
+      id="cat"
+      style="border: none"
+      src="./imgs/image-cat.webp"
+      alt="Imagen de gato"
+      onclick="
+        let gato = document.querySelector('#cat');
+        if (gato.style.border == 'none') {
+          gato.style.border = '5px solid red';
+          gato.style.borderRadius = '20px';
+        } else {
+          gato.style.border = 'none';
+          gato.style.borderRadius = '0px';
+        }
+      "
+    />
+  </body>
+</html>
