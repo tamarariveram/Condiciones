@@ -87,7 +87,7 @@
         let s3 = Number(document.querySelector('#sticker3').value);
         let total = s1 + s2 + s3;
         let mensaje = document.querySelector('#mensaje');
-        if (total < 10) {
+        if (total <= 10) {
           mensaje.textContent = 'Llevas ' + total + ' stickers';
         } else {
           mensaje.textContent = 'Llevas demasiados stickers';
