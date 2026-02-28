@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      gap: 40px;
+      height: 100vh;
+    }
+
+    .sticker {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .sticker div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .sticker img {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
+    }
+
+    .sticker input {
+      margin-top: 5px;
+    }
+
+    p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <h3>Puedes llevar hasta 10 stickers en total</h3>
+    <div class="sticker">
+      <div>
+        <img src="./imgs/amante-de-los-gatos.png" alt="Sticker de gato" />
+        <input type="number" id="sticker1" />
+      </div>
+      <div>
+        <img
+          src="./imgs/que-tenga-un-lindo-dia.png"
+          alt="Sticker de feliz día"
+        />
+        <input type="number" id="sticker2" />
+      </div>
+      <div>
+        <img src="./imgs/amante-de-los-perros.png" alt="Sticker de perro" />
+        <input type="number" id="sticker3" />
+      </div>
+    </div>
+    <p id="mensaje"></p>
+    <button
+      onclick="
+        let s1 = Number(document.querySelector('#sticker1').value);
+        let s2 = Number(document.querySelector('#sticker2').value);
+        let s3 = Number(document.querySelector('#sticker3').value);
+        let total = s1 + s2 + s3;
+        let mensaje = document.querySelector('#mensaje');
+        if (total < 10) {
+          mensaje.textContent = 'Llevas ' + total + ' stickers';
+        } else {
+          mensaje.textContent = 'Llevas demasiados stickers';
+        }
+      "
+    >
+      Verificar
+    </button>
+  </body>
+</html>
