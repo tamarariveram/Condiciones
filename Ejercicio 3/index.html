@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 40px;
+    }
+
+    .seleccion {
+      display: flex;
+      gap: 40px;
+    }
+
+    select {
+      padding: 2px 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 5px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+  <body>
+    <h2>Ingresa el password correcto</h2>
+    <p id="resultado"></p>
+    <div class="seleccion">
+      <select name="num1" id="num1">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+      <select name="num2" id="num2">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+      <select name="num3" id="num3">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+      </select>
+    </div>
+    <button
+      onclick="
+        let password1 = 911;
+        let password2 = 714;
+
+        let num1 = Number(document.querySelector('#num1').value);
+        let num2 = Number(document.querySelector('#num2').value);
+        let num3 = Number(document.querySelector('#num3').value);
+
+        let resultado = document.querySelector('#resultado');
+
+        if (num1 == 9 && num2 == 1 && num3 == 1) {
+          resultado.textContent = 'Password 1 correcto';
+          resultado.style.color = 'green';
+        } else if (num1 == 7 && num2 == 1 && num3 == 4) {
+          resultado.textContent = 'Password 2 correcto';
+          resultado.style.color = 'green';
+        } else {
+          resultado.textContent = 'Password incorrecto';
+          resultado.style.color = 'red';
+        }
+      "
+    >
+      Verificar Password
+    </button>
+  </body>
+</html>
